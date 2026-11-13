@@ -1,5 +1,5 @@
 // 앱을 수정해서 다시 올릴 때 아래 버전 숫자를 1씩 올려주세요.
-const CACHE="bible-pace-v58";
+const CACHE="bible-pace-v59";
 const SHELL=["./","index.html","manifest.webmanifest","apple-touch-icon.png","icon-192.png","icon-512.png"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
