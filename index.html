@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#f2f4f7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141a26" media="(prefers-color-scheme: dark)">
 <title>Bible Reading Pace</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{--ls:.2em;--bg:#f2f4f7;--surf:#fff;--ink:#1c2740;--mute:#8a919c;--line:#dde1e8;--acc:#2f5d8a;--acc2:#b5832f;--on:#fff;--track:#e3e7ee;--bur:#7a1f36;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a26;--surf:#1d2535;--ink:#e6eaf2;--mute:#8e97a8;--line:#2e3849;--acc:#6fa3d8;--acc2:#d9a94f;--on:#10151f;--track:#2a3446;--bur:#b04a63}}
@@ -212,6 +212,125 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 .esvr{justify-content:flex-end}
 .vtb{width:46px;height:46px;border-radius:10px;font-weight:400;font-size:10px}
 .so button:disabled{opacity:1;color:var(--mute)}.so button:disabled .vtb{color:var(--mute);background:var(--bg)}
+
+/* v0.54 */
+.sum:not(.qnow) .stats{padding-top:34px}.qnow .stats .ttl{margin-top:34px}
+.dr .dp2{gap:6.5px;margin-left:.56px}
+#dp .dpy{position:absolute;top:13px;left:20px;margin:0;padding:0}
+#bl .card{display:flex;flex-direction:column;overflow:hidden;max-height:88vh;text-align:left}
+.blt{margin:6px 0 0;font:500 18px/1.5 "Noto Sans KR",system-ui,sans-serif;color:var(--ink)}.bld{margin:4px 0 0;font-size:12px;line-height:1.5;color:var(--mute)}
+#blb{flex:1;min-height:0;overflow-y:auto;margin:6px -4px 0;padding:0 4px}
+.blh{margin:24px 0 12px;font:500 15px/1.5 "Noto Sans KR",system-ui,sans-serif;letter-spacing:1px;color:var(--ink)}
+.blgt{background:none;border:0;padding:8px 0 6px;color:var(--acc);font:inherit;font-size:12px;letter-spacing:1px;cursor:pointer}.blgt[aria-pressed=true]{font-weight:500}
+.blc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.blb{position:relative;height:40px;padding:0 0 1px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);background:var(--surf);color:var(--ink);font:inherit;font-size:15px;line-height:1.2;border-radius:999px;cursor:pointer}
+.blb[aria-pressed=true]{background:var(--acc);border-color:var(--acc);color:var(--on)}.blb em{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-style:normal;font-size:10px;opacity:.85}
+.blf{flex:none;display:flex;margin-top:28px}.blf .ctb{margin-top:0;flex:1}.blok{position:absolute;top:12px;right:12px;width:34px;height:34px;border:0;background:none;color:var(--bur);display:grid;place-items:center;padding:0;cursor:pointer}.blok svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ===== text styles (bible-text-styles v3) ===== */
+#pct{font-size:25px!important;font-weight:900!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.qdd{font-size:25px!important;font-weight:900!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.sum:not(.qnow) .stats .ttl{font-size:20px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.qnow .ttl.qpas{font-size:20px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.lv1 b.ln{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.mh .mb{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.pth h3{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+.ftl{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+#ctt{font-size:18px!important;font-weight:700!important;line-height:1.2!important;--ls:2px;letter-spacing:2px!important}
+#vt{font-size:15px!important;font-weight:500!important;line-height:1.8!important;--ls:0px;letter-spacing:0px!important}
+.pop.alert .vt{font-size:15px!important;font-weight:500!important;line-height:1.8!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary .k{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qg>summary span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#vc .d.today{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pv.act{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#vc .d{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pk-i{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pv{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#cte{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.ctb{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.srow b{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.set summary b{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.so button{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.vtl>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.psum>div{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.rl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.seg span.sl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.dd{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.cfb .chip{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.srow>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.set summary>span{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pl{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.yr{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.srow u{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.set summary u{font-size:15px!important;font-weight:500!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.sum:not(.qnow) .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qnow .stats .pc{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.stats .cs{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.tg span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.lv1 em.le{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.lv1>span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary .en{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.grid button.c span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.grid button.c s{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+button.all{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#vc .wd div{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.fixl{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.fix button{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.chip.td{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#pd{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#vr{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+#pkt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qpn1{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qgo span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qmore{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.esvr button{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+details[id^=d]>summary .meta{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.cnt{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qcap{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.fnote{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.pop .wd div{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.dn span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qm{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qw{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qw span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qmsg{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.qy{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.sh{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.esvn{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.verf{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.ctd{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.ctl span{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+p.note{font-size:12px!important;font-weight:300!important;line-height:1.5!important;--ls:0px;letter-spacing:0px!important}
+.grid button.c i{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.dr .dt span{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+small.dy{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.vtb{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.tg2{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.ctto small{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.cth{font-size:10px!important;font-weight:300!important;line-height:1!important;--ls:0px;letter-spacing:0px!important}
+.sh{--ls:1px;letter-spacing:1px!important}
+.srow b{--ls:1px;letter-spacing:1px!important}
+.set summary b{--ls:1px;letter-spacing:1px!important}
+.so button{--ls:1px;letter-spacing:1px!important}
+.vtl>span{--ls:1px;letter-spacing:1px!important}
+.srow>span{--ls:1px;letter-spacing:1px!important}
+.set summary>span{--ls:1px;letter-spacing:1px!important}
+.srow u{--ls:1px;letter-spacing:1px!important}
+.set summary u{--ls:1px;letter-spacing:1px!important}
+.vtb{--ls:1px;letter-spacing:1px!important}
+.esvr button{--ls:1px;letter-spacing:1px!important}
+.esvn{--ls:1px;letter-spacing:1px!important}
+.tg2{--ls:1px;letter-spacing:1px!important}
+.verf{--ls:1px;letter-spacing:1px!important}
+.seg span.sl.t2,#pq .qt.qj{letter-spacing:calc(.6em + 2*var(--ls))!important}
+.dr .dt b{font-size:15px!important;font-weight:500!important;line-height:1.8!important}
+.dr .dt span,.dr small.dy{line-height:1!important}
+.fix button{color:var(--acc)!important}
+.tg span,.qnow .qm,.esvr button{color:var(--acc)}
+.qm,.esvr button{color:var(--ink)!important}
+.tg span{color:var(--acc)!important}
 </style>
 </head>
 <body>
@@ -244,7 +363,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 <details id="sdl"><summary><span data-t="s_lang">언어</span><b id="slv">한국어</b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
 <div class="so" id="so-l"><button data-lang="ko" aria-pressed="true">한국어<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button><button data-lang="en" aria-pressed="false">English<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button></div></details>
 <details id="sdt"><summary><span data-t="s_theme">테마</span><b id="stv">Light</b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
-<div class="so" id="so-t"><button data-theme="light" aria-pressed="true">Light<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button><button data-theme="dark" aria-pressed="false">Dark<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button></div></details><button class="srow lk" data-wip><span><u data-t="r_fsz"></u></span><b data-t="v_std"></b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button><div class="srow slr"><span><u data-t="r_bar"></u></span><b id="bav"></b><input type="range" id="bat" min="0" max="100" step="1" value="80" aria-labelledby="bal"></div>
+<div class="so" id="so-t"><button data-theme="light" aria-pressed="true">Light<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button><button data-theme="dark" aria-pressed="false">Dark<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button></div></details><button class="srow lk" data-wip><span><u data-t="r_fsz"></u></span><b data-t="v_std"></b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button><div class="srow slr"><span><u data-t="r_bar"></u></span><b id="bav"></b><input type="range" id="bat" min="0" max="100" step="10" value="50" aria-labelledby="bal"></div>
 <h4 class="sh" data-t="g_bib"></h4>
 <details id="sdv"><summary><span data-t="s_ver">버전</span><b id="svv"></b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary>
 <div class="so" id="so-v"></div></details><details id="sesv"><summary><span data-t="r_esv"></span><b id="esvv"></b><svg class="chv" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><div class="esvb"><div class="esvf"><input id="esvk" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Passphrase" data-ph="esv_ph"></div><div class="esvr"><button id="esvs" data-t="esv_save"></button><button id="esvt" data-t="esv_test"></button><button id="esvc" data-t="esv_clear"></button></div><p id="esvm" class="esvm" aria-live="polite"></p><p class="esvn" data-t="esv_note"></p></div></details>
@@ -280,6 +399,7 @@ main{padding:20px 16px calc(100px + env(safe-area-inset-bottom,0px))}
 <div class="pop alert s" id="cf" role="alertdialog" aria-modal="true" aria-labelledby="cft"><div class="card"><p class="vt" id="cft" data-t="del_q">이 페이스를 삭제할까요?</p><div class="cfb"><button class="chip" id="cfn" data-t="cancel">취소</button><button class="chip dng" id="cfy" data-t="del">삭제</button></div></div></div>
 <div class="pop alert m" id="inf" role="alertdialog" aria-modal="true" aria-labelledby="inft"><div class="card"><p class="vt" id="inft"></p><div class="cfb"><button class="chip" id="infno" hidden data-t="cancel">취소</button><button class="chip pri" id="infok" data-t="okb">확인</button></div></div></div>
 <div class="pop sheet" id="ct" role="dialog" aria-modal="true" aria-labelledby="ctt"><div class="card"><button class="ctx" id="ctn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button><div class="cti"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7.5 8 6 8-6"/></svg></div><p class="ctt" id="ctt" data-t="ct_t"></p><p class="ctd" data-t="ct_body"></p><div class="ctto"><div><small data-t="ct_to"></small><b id="cte"></b></div><button id="ctcp" class="ctcp"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg></button></div><h5 class="cth" data-t="ct_inc"></h5><div class="ctl" id="ctl"></div><button class="ctb pri" id="cto"></button><button class="ctb" id="ctc" data-t="ct_copy"></button><p class="ctm" id="ctmsg" aria-live="polite"></p></div></div>
+<div class="pop sheet" id="bl" role="dialog" aria-modal="true" aria-labelledby="blt"><div class="card"><button class="blok" id="blo" aria-label="확인"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button><p class="blt" id="blt" data-t="order"></p><p class="bld" data-t="bl_hint"></p><div id="blb"></div><div class="blf"><button class="ctb" id="blx" data-t="bl_clear"></button></div></div></div>
 <div class="pop alert s" id="wip" role="status"><div class="card"><p class="vt" data-t="wip">준비 중이에요.</p></div></div>
 <div class="pop" id="dp" role="dialog" aria-modal="true" aria-label="날짜 선택"><div class="card"><button class="dpok" id="dpok" aria-label="확인"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button><div id="dpb"></div></div></div>
 <script>
@@ -380,13 +500,14 @@ document.getElementById("pm").onclick=()=>{if(--cm<0){cm=11;cy--}renderCal()};
 document.getElementById("nm").onclick=()=>{if(++cm>11){cm=0;cy++}renderCal()};
 const pk=document.getElementById("pk"),pkb=document.getElementById("pkb");
 const closePk=()=>pk.classList.remove("on");
-function openPk(kind){
+let PKX="c";
+function openPk(kind,ctx){PKX=ctx||"c";const yv=PKX==="d"?dy:cy,mv=PKX==="d"?dm:cm;pk.style.zIndex=PKX==="d"?"30":"";
  document.getElementById("pkt").textContent=kind==="y"?"Year":"Month";
- if(kind==="y"){pkb.innerHTML='<div class="ylist" id="yl">'+Array.from({length:6},(_,i)=>2025+i).map(y=>`<button class="pk-i" data-y="${y}" aria-pressed="${y===cy}">${tr("yr",y)}</button>`).join("")+'</div>';
+ if(kind==="y"){pkb.innerHTML='<div class="ylist" id="yl">'+Array.from({length:11},(_,i)=>2025+i).map(y=>`<button class="pk-i" data-y="${y}" aria-pressed="${y===yv}">${tr("yr",y)}</button>`).join("")+'</div>';
   pk.classList.add("on");const yl=document.getElementById("yl"),a=yl.querySelector("[aria-pressed=true]");if(a)yl.scrollTop=a.offsetTop-yl.clientHeight/2+a.offsetHeight/2}
- else{pkb.innerHTML='<div class="mgrid">'+MN.map((n,i)=>`<button class="pk-i" data-m="${i}" aria-pressed="${i===cm}">${ST.lang==="ko"?(i+1)+"월":n.slice(0,3)}</button>`).join("")+'</div>';pk.classList.add("on")}
+ else{pkb.innerHTML='<div class="mgrid">'+MN.map((n,i)=>`<button class="pk-i" data-m="${i}" aria-pressed="${i===mv}">${ST.lang==="ko"?(i+1)+"월":n.slice(0,3)}</button>`).join("")+'</div>';pk.classList.add("on")}
 }
-pk.addEventListener("click",e=>{if(e.target===pk){closePk();return}const b=e.target.closest(".pk-i");if(!b)return;if(b.dataset.y)cy=+b.dataset.y;else cm=+b.dataset.m;closePk();renderCal()});
+pk.addEventListener("click",e=>{if(e.target===pk){closePk();return}const b=e.target.closest(".pk-i");if(!b)return;if(PKX==="d"){if(b.dataset.y)dy=+b.dataset.y;else dm=+b.dataset.m;closePk();renderDp();return}if(b.dataset.y)cy=+b.dataset.y;else cm=+b.dataset.m;closePk();renderCal()});
 document.getElementById("yr").onclick=()=>openPk("y");
 document.getElementById("mt").onclick=()=>openPk("m");
 document.getElementById("top").onclick=()=>window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
@@ -395,8 +516,8 @@ Object.keys(TB).forEach(id=>document.getElementById(id).addEventListener("click"
  for(const t in TB){const on=t===id;if(t==="tq"&&!on){QOPEN=null;QMORE.clear()}document.getElementById(t).setAttribute("aria-selected",on);document.getElementById(TB[t]).hidden=!on}
  if(id==="tc")renderCal();if(id==="tl")renderPlan();if(id==="tq")renderQ();document.getElementById("top").hidden=id!=="tp"&&id!=="tq";window.scrollTo(0,0)}));
 /* 설정 */
-const SKEY="bible-settings-v1";let ST={dev:false,bt:80,link:true,rc:true,nr:false,nv:false,lang:"ko",theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"};
-try{ST={...ST,...(JSON.parse(localStorage.getItem(SKEY)||"{}")||{})}}catch(e){}
+const SKEY="bible-settings-v1";let ST={dev:false,bt:50,link:true,rc:true,nr:false,nv:false,lang:"ko",theme:matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"};
+try{ST={...ST,...(JSON.parse(localStorage.getItem(SKEY)||"{}")||{})};if(ST.btd!==1){ST.bt=50;ST.btd=1;localStorage.setItem(SKEY,JSON.stringify(ST))}}catch(e){}
 /* ===== i18n ===== */
 const WDF=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 const I={
@@ -426,7 +547,7 @@ ko:{tab_p:"진행률",tab_c:"달력",tab_l:"페이스 플래너",tab_s:"설정",
  cnt:(c,v)=>`${c}장 · ${v}절`,st1:(a,b)=>`구약 ${a}% · 신약 ${b}%`,st2:(c,tc,v,tv)=>`${c}/${tc}장 · ${v}/${tv}절`,chn:(c,tc)=>`${c}/${tc}장`,
  chu:"장",vu:"절",yr:y=>`${y}년`,dayaria:(m,d,r)=>`${m+1}월 ${d}일${r?", 읽음":""}`,dpd:(y,m,d)=>`${y}년 ${m+1}월 ${d}일`,
  pdate:(m,d,w)=>`${m}월 ${d}일 ${["일","월","화","수","목","금","토"][w]}요일`,vref:v=>`${v[0]} · ${v[1]}`,
- s_lang:"언어",s_theme:"테마",s_ver:"버전",s_link:"진행률·페이스 연동",q_go:"오늘 날짜로 이동",q_more:"더 보기",q_less:"접기",undo:"되돌리기",q_now:"오늘 읽기",q_days:(a,b)=>`${a}/${b}일`,q_prog:(n,t)=>`${t}일 중 ${n}일째`,q_ahead:n=>`${n}일 앞서고 있어요!`,q_onp:"딱 맞게 가고 있어요!",q_behind:n=>`${n}일 밀렸어요, 괜찮아요`,r_fsz:"글씨 크기",g_esv:"영어 성경 (ESV)",r_esv:"ESV 연결",esv_save:"저장",esv_test:"연결 테스트",esv_clear:"지우기",esv_note:"ESV 키만 넣어 주세요(Token 글자는 빼도 돼요). 이 기기의 브라우저에만 저장되고, 서버로 보내지 않아요. 개인 용도로만 쓰세요.",esv_ph:"ESV 키",esv_badurl:"https:// 로 시작하는 주소를 넣어 주세요",esv_set:"설정됨",esv_unset:"미설정",esv_ok:"연결됐어요",esv_empty:"ESV 키를 입력해 주세요",esv_saved:"저장했어요",esv_cleared:"지웠어요",esv_wait:"확인 중…",esv_401:"키가 맞지 않아요. 다시 확인해 주세요",esv_429:"요청 한도를 넘었어요. 잠시 후 다시 해 보세요",esv_net:"요청을 보내지 못했어요. 이 화면에서 외부 요청이 막혔거나 인터넷 문제일 수 있어요",r_bar:"하단 바 투명도",v_std:"기본",q_read:"읽음",q_un:"읽을말씀",q_un_e:"To Read",q_rd:"읽은말씀",q_rd_e:"Read",q_d:n=>`${n}일`,q_y:y=>`${y}년`,q_all:"모두 읽었어요.",q_nop:"페이스를 먼저 만들어 주세요.",q_t:"데일리 플랜",g_acc:"계정",g_data:"데이터",g_noti:"알림",g_gen:"일반",g_bib:"성경",g_plan:"읽기 계획",g_app:"앱",r_me:"나의 정보",r_sub:"구독 관리",r_exp:"내보내기",r_imp:"가져오기",r_sync:"동기화",r_rst:"초기화",r_nrd:"읽기 알림",r_nrep:"반복",r_ntime:"시간",v_daily:"매일",v_time:"오전 8:00",r_nvs:"오늘의 말씀",r_link:"진행률·페이스 연동",r_rec:"재계산",r_wk:"한 주의 시작",v_sun:"일요일",r_prv:"이전 말씀 개수",v_n1:"1개",r_ver:"앱 버전",r_rate:"앱 평가하기",r_priv:"개인정보 처리 방침",r_ctc:"문의",tag_pgpc:"진행률·페이스",tag_pc:"페이스",tag_cl:"달력",pv_open:"일별 계획 보기",pv_t:"읽기 계획표",pv_none:"계획을 만들 수 없어요. 목표일, 빈도, 분량을 확인해 주세요.",pv_ord:"연대순·목록 선택 순서는 준비 중이라 성경순으로 보여드려요.",exp_done:"백업 파일을 저장했어요.",imp_q:"가져오면 지금 기록이 백업 내용으로 바뀌어요. 계속할까요?",imp_bad:"백업 파일을 읽을 수 없어요.",pvd:(d,b)=>`${d}`,pv_chk:"읽음 표시",verL:[["RNKSV","새번역","새번역"],["KRV","개역한글","개역한글"]]},
+ s_lang:"언어",s_theme:"테마",s_ver:"버전",s_link:"진행률·페이스 연동",q_go:"오늘 날짜로 이동",q_more:"더 보기",q_less:"접기",undo:"되돌리기",q_now:"오늘 읽기",q_days:(a,b)=>`${a}/${b}일`,q_prog:(n,t)=>`${t}일 중 ${n}일째`,q_ahead:n=>`${n}일 앞서고 있어요!`,q_onp:"딱 맞게 가고 있어요!",q_behind:n=>`${n}일 밀렸어요, 괜찮아요`,r_fsz:"글씨 크기",g_esv:"영어 성경 (ESV)",r_esv:"ESV 연결",esv_save:"저장",esv_test:"연결 테스트",esv_clear:"지우기",esv_note:"ESV 키만 넣어 주세요 (Token 글자는 빼도 돼요). 이 기기의 브라우저에만 저장되고, 서버로 보내지 않아요. 개인 용도로만 쓰세요.",esv_ph:"ESV 키",esv_badurl:"https:// 로 시작하는 주소를 넣어 주세요",esv_set:"설정됨",esv_unset:"미설정",esv_ok:"연결됐어요.",esv_empty:"ESV 키를 입력해 주세요.",esv_saved:"저장했어요.",esv_cleared:"지웠어요.",esv_wait:"확인 중이에요. 기다려 주세요.",esv_401:"키가 맞지 않아요. 다시 확인해 주세요.",esv_429:"요청 한도를 넘었어요. 잠시 후 다시 해 보세요.",esv_net:"요청을 보내지 못했어요. 이 화면에서 외부 요청이 막혔거나 인터넷 문제일 수 있어요.",r_bar:"하단 바 투명도",v_std:"기본",q_read:"읽음",q_un:"읽을말씀",q_un_e:"To Read",q_rd:"읽은말씀",q_rd_e:"Read",q_d:n=>`${n}일`,q_y:y=>`${y}년`,q_all:"모두 읽었어요.",q_nop:"페이스를 먼저 만들어 주세요.",q_t:"데일리 플랜",bl_hint:"읽을 묶음을 순서대로 눌러 주세요. 여러 개를 고를 수 있어요.",bl_clear:"초기화",r_pick:n=>`선택한 ${n}권`,g0:"모세오경",g1:"역사서",g2:"시가서",g3:"대선지서",g4:"소선지서",g5:"복음서",g6:"역사서",g7:"서신서",g8:"예언서",g_acc:"계정",g_data:"데이터",g_noti:"알림",g_gen:"일반",g_bib:"성경",g_plan:"읽기 계획",g_app:"앱",r_me:"나의 정보",r_sub:"구독 관리",r_exp:"내보내기",r_imp:"가져오기",r_sync:"동기화",r_rst:"초기화",r_nrd:"읽기 알림",r_nrep:"반복",r_ntime:"시간",v_daily:"매일",v_time:"오전 8:00",r_nvs:"오늘의 말씀",r_link:"진행률·페이스 연동",r_rec:"재계산",r_wk:"한 주의 시작",v_sun:"일요일",r_prv:"이전 말씀 개수",v_n1:"1개",r_ver:"앱 버전",r_rate:"앱 평가하기",r_priv:"개인정보 처리 방침",r_ctc:"문의",tag_pgpc:"진행률·페이스",tag_pc:"페이스",tag_cl:"달력",pv_open:"일별 계획 보기",pv_t:"읽기 계획표",pv_none:"계획을 만들 수 없어요. 목표일, 빈도, 분량을 확인해 주세요.",pv_ord:"연대순·목록 선택 순서는 준비 중이라 성경순으로 보여드려요.",exp_done:"백업 파일을 저장했어요.",imp_q:"가져오면 지금 기록이 백업 내용으로 바뀌어요. 계속할까요?",imp_bad:"백업 파일을 읽을 수 없어요.",pvd:(d,b)=>`${d}`,pv_chk:"읽음 표시",verL:[["RNKSV","새번역","새번역"],["KRV","개역한글","개역한글"]]},
 en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:"Progress",sw:"Show chapters and verses",
  note:"Progress is measured by verse count. Verse counts follow KJV versification and may differ slightly from ESV and other translations.",
  prev_m:"Previous month",next_m:"Next month",go:"Set a new pace",add:"Add a new pace",back:"Back",done:"Done",top:"Back to top",
@@ -453,11 +574,11 @@ en:{tab_p:"Progress",tab_c:"Calendar",tab_l:"Pace Planner",tab_s:"Settings",ttl:
  cnt:(c,v)=>`${c} chapters · ${v} verses`,st1:(a,b)=>`OT ${a}% · NT ${b}%`,st2:(c,tc,v,tv)=>`${c}/${tc} chapters · ${v}/${tv} verses`,chn:(c,tc)=>`${c}/${tc} chapters`,
  chu:"",vu:"v",yr:y=>`${y}`,dayaria:(m,d,r)=>`${MN[m]} ${d}${r?", read":""}`,dpd:(y,m,d)=>`${MN[m]} ${d}, ${y}`,
  pdate:(m,d,w)=>`${WDF[w]}, ${MN[m-1]} ${d}`,vref:v=>`${v[1]}`,
- s_lang:"Language",s_theme:"Theme",s_ver:"Version",s_link:"Link Progress & Pace",q_go:"Go to today",q_more:"Show more",q_less:"Show less",undo:"Undo",q_now:"Today's Reading",q_days:(a,b)=>`${a}/${b} days`,q_prog:(n,t)=>`${n} of ${t} days`,q_ahead:n=>`${n} day${n>1?'s':''} ahead!`,q_onp:"Right on pace!",q_behind:n=>`${n} day${n>1?'s':''} behind - no rush`,r_fsz:"Text size",g_esv:"English Bible (ESV)",r_esv:"ESV connection",esv_save:"Save",esv_test:"Test connection",esv_clear:"Clear",esv_note:"Enter only the ESV key (the word Token is optional). It is stored only in this device's browser. For personal use only.",esv_ph:"ESV key",esv_badurl:"Enter an address starting with https://",esv_set:"Set",esv_unset:"Not set",esv_ok:"Connected",esv_empty:"Enter the ESV key",esv_saved:"Saved",esv_cleared:"Cleared",esv_wait:"Checking…",esv_401:"The key was not accepted. Please check it",esv_429:"Request limit reached. Try again shortly",esv_net:"The request could not be sent. External requests may be blocked here, or there is a network problem",r_bar:"Tab bar transparency",v_std:"Default",q_read:"Read",q_un:"To read",q_un_e:"",q_rd:"Read",q_rd_e:"",q_d:n=>`${n} day${n>1?"s":""}`,q_y:y=>`${y}`,q_all:"All done.",q_nop:"Create a pace first.",q_t:"Daily Plan",g_acc:"Account",g_data:"Data",g_noti:"Notifications",g_gen:"General",g_bib:"Bible",g_plan:"Reading Plan",g_app:"App",r_me:"My info",r_sub:"Subscription",r_exp:"Export",r_imp:"Import",r_sync:"Sync",r_rst:"Reset",r_nrd:"Reading reminder",r_nrep:"Repeat",r_ntime:"Time",v_daily:"Every day",v_time:"8:00 AM",r_nvs:"Verse of the day",r_link:"Link Progress & Pace",r_rec:"Recalculate",r_wk:"Week starts on",v_sun:"Sunday",r_prv:"Previous passages",v_n1:"1",r_ver:"App version",r_rate:"Rate the app",r_priv:"Privacy policy",r_ctc:"Contact us",tag_pgpc:"Progress · Pace",tag_pc:"Pace",tag_cl:"Calendar",pv_open:"Daily plan",pv_t:"Reading plan",pv_none:"Can't build a plan. Check the target date, frequency and amount.",pv_ord:"Chrono and list orders are coming soon, so this follows book order.",exp_done:"Backup file saved.",imp_q:"Importing replaces your current records with the backup. Continue?",imp_bad:"Can't read this backup file.",pvd:(d,b)=>`${d}`,pv_chk:"Mark as read",verL:[["KJV","King James Version","KJV"],["ESV","English Standard Version","ESV"],["NIV","New International Version","NIV"]]}};
+ s_lang:"Language",s_theme:"Theme",s_ver:"Version",s_link:"Link Progress & Pace",q_go:"Go to today",q_more:"Show more",q_less:"Show less",undo:"Undo",q_now:"Today's Reading",q_days:(a,b)=>`${a}/${b} days`,q_prog:(n,t)=>`${n} of ${t} days`,q_ahead:n=>`${n} day${n>1?'s':''} ahead!`,q_onp:"Right on pace!",q_behind:n=>`${n} day${n>1?'s':''} behind - no rush`,r_fsz:"Text size",g_esv:"English Bible (ESV)",r_esv:"ESV connection",esv_save:"Save",esv_test:"Test connection",esv_clear:"Clear",esv_note:"Enter only the ESV key (the word Token is optional). It is stored only in this device's browser. For personal use only.",esv_ph:"ESV key",esv_badurl:"Enter an address starting with https://",esv_set:"Set",esv_unset:"Not set",esv_ok:"Connected.",esv_empty:"Enter the ESV key.",esv_saved:"Saved.",esv_cleared:"Cleared.",esv_wait:"Checking. Please wait.",esv_401:"The key was not accepted. Please check it.",esv_429:"Request limit reached. Try again shortly.",esv_net:"The request could not be sent. External requests may be blocked here, or there is a network problem.",r_bar:"Tab bar transparency",v_std:"Default",q_read:"Read",q_un:"To read",q_un_e:"",q_rd:"Read",q_rd_e:"",q_d:n=>`${n} day${n>1?"s":""}`,q_y:y=>`${y}`,q_all:"All done.",q_nop:"Create a pace first.",q_t:"Daily Plan",bl_hint:"Tap the groups in the order you want to read. You can pick more than one.",bl_clear:"Clear",r_pick:n=>`${n} books selected`,g0:"Pentateuch",g1:"History",g2:"Poetry",g3:"Major Prophets",g4:"Minor Prophets",g5:"Gospels",g6:"History",g7:"Epistles",g8:"Prophecy",g_acc:"Account",g_data:"Data",g_noti:"Notifications",g_gen:"General",g_bib:"Bible",g_plan:"Reading Plan",g_app:"App",r_me:"My info",r_sub:"Subscription",r_exp:"Export",r_imp:"Import",r_sync:"Sync",r_rst:"Reset",r_nrd:"Reading reminder",r_nrep:"Repeat",r_ntime:"Time",v_daily:"Every day",v_time:"8:00 AM",r_nvs:"Verse of the day",r_link:"Link Progress & Pace",r_rec:"Recalculate",r_wk:"Week starts on",v_sun:"Sunday",r_prv:"Previous passages",v_n1:"1",r_ver:"App version",r_rate:"Rate the app",r_priv:"Privacy policy",r_ctc:"Contact us",tag_pgpc:"Progress · Pace",tag_pc:"Pace",tag_cl:"Calendar",pv_open:"Daily plan",pv_t:"Reading plan",pv_none:"Can't build a plan. Check the target date, frequency and amount.",pv_ord:"Chrono and list orders are coming soon, so this follows book order.",exp_done:"Backup file saved.",imp_q:"Importing replaces your current records with the backup. Continue?",imp_bad:"Can't read this backup file.",pvd:(d,b)=>`${d}`,pv_chk:"Mark as read",verL:[["KJV","King James Version","KJV"],["ESV","English Standard Version","ESV"],["NIV","New International Version","NIV"]]}};
 const tr=(k,...a)=>{const v=(I[ST.lang]||I.ko)[k];return typeof v==="function"?v(...a):v};
 function verUI(){const L=I[ST.lang].verL;document.getElementById("svv").textContent=L[0][2];document.getElementById("so-v").innerHTML=L.map((v,i)=>`<button data-ver="${i}" aria-pressed="${i===0}"${i?" disabled":""}><span class="vtl"><i class="vtb">${v[0]}</i><span>${v[1]}</span></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.5 17 19 7"/></svg></button>`).join("")}
-const APPV="0.53",CONTACT="";
-function applyBar(){const t=Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:80));document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",(t<=80?10:Math.round(10-7*(t-80)/20))+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
+const APPV="0.57",CONTACT="";
+function applyBar(){const t=Math.round(Math.min(100,Math.max(0,Number.isFinite(+ST.bt)?+ST.bt:50))/10)*10;document.documentElement.style.setProperty("--ba",(1-t/100).toFixed(2));document.documentElement.style.setProperty("--bb",Math.round(18-16*t/100)+"px");const i=document.getElementById("bat");if(i)i.value=t;document.getElementById("bav").textContent=t+"%";const l=document.getElementById("bat");if(l)l.setAttribute("aria-valuetext",t+"%")}
 document.getElementById("bat").addEventListener("input",e=>{ST.bt=+e.target.value;applyBar()});
 document.getElementById("bat").addEventListener("change",()=>{try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}});
 let vtn=0,vtt;document.getElementById("verf").addEventListener("click",()=>{vtn++;clearTimeout(vtt);vtt=setTimeout(()=>{vtn=0},2000);if(vtn>=7){vtn=0;ST.dev=!ST.dev;try{localStorage.setItem(SKEY,JSON.stringify(ST))}catch(x){}applySt();showInfo(tr(ST.dev?"dev_on":"dev_off"))}});
@@ -496,10 +617,12 @@ document.getElementById("vs").addEventListener("click",e=>{const l=e.target.clos
 const PKEY="bible-plan-v1",PKEY2="bible-paces-v2";let PACES=[],EDIT=null,DEL=null;
 const escH=t=>String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const paceTitle=(p,i)=>p.name||(PACES.length>1?tr("pn",i+1):tr("my"));
-const DEF={name:"",start:"",target:"",range:"all",freq:"d",freqX:"",amt:"u",amtX:"",order:"b"};
+const DEF={name:"",start:"",target:"",range:"all",freq:"d",freqX:"",amt:"u",amtX:"",order:"b",list:[],grp:[]};
 try{const r=localStorage.getItem(PKEY2);if(r!==null){PACES=(JSON.parse(r)||[]).filter(x=>x&&x.start&&x.target).map(x=>({...DEF,...x}))}else{const x=JSON.parse(localStorage.getItem(PKEY)||"null");if(x&&x.start&&x.target)PACES=[{...DEF,...x,id:"p"+Date.now(),main:true}]}}catch(e){}
 const RG={all:[0,66,"전체"],ot:[0,OT,"구약"],nt:[OT,66,"신약"]};
-const chOf=r=>{let n=0;for(let b=RG[r][0];b<RG[r][1];b++)n+=D[b][2].length;return n};
+const GR=[["g0",0,5],["g1",5,17],["g2",17,22],["g3",22,27],["g4",27,39],["g5",39,43],["g6",43,44],["g7",44,65],["g8",65,66]];
+const bkOf=p=>(p.order==="r"&&p.list&&p.list.length)?p.list:Array.from({length:RG[p.range][1]-RG[p.range][0]},(_,i)=>RG[p.range][0]+i);
+const chOf=p=>bkOf(p).reduce((n,b)=>n+D[b][2].length,0);
 const todayK=key(now.getFullYear(),now.getMonth(),now.getDate());
 const dot=k=>k.replace(/-/g,"."),pdt=k=>{const [y,m,d]=k.split("-").map(Number);return new Date(y,m-1,d)};
 const addM=(k,n)=>{const d=pdt(k),t=new Date(d.getFullYear(),d.getMonth()+n,1),last=new Date(t.getFullYear(),t.getMonth()+1,0).getDate();t.setDate(Math.min(d.getDate(),last));return key(t.getFullYear(),t.getMonth(),t.getDate())};
@@ -520,7 +643,7 @@ function calc(p){
  if(!p.target||p.target==="tbd")return null;
  if(p.freq==="x"&&!okInt(p.freqX,1,7))return null;
  if(p.amt==="x"&&!okInt(p.amtX,1,100))return null;
- const ch=chOf(p.range),f=fq(p)[1]||7,days=dayDiff(p.start,p.target)+1,am=amtN(p);
+ const ch=chOf(p),f=fq(p)[1]||7,days=dayDiff(p.start,p.target)+1,am=amtN(p);
  if(!am){const rd=Math.max(1,Math.round(days*f/7));return {mode:"need",x:ch/rd,days}}
  const cal=Math.ceil(Math.ceil(ch/am)*7/f);return {mode:"fin",cal,end:addD(p.start,cal-1),diff:days-cal,days};
 }
@@ -544,7 +667,7 @@ const savePD=()=>{try{localStorage.setItem("bible-plan-done-v1",JSON.stringify(P
 function planDays(p){
  const out=[];if(!p.start)return out;
  let am=amtN(p);if(!am){const c=calc(p);if(c&&c.mode==="need")am=Math.max(1,Math.ceil(c.x));else return out}
- const f=fq(p)[1]||7,seq=[];for(let b=RG[p.range][0];b<RG[p.range][1];b++)for(let i=0;i<D[b][2].length;i++)seq.push([b,i]);
+ const f=fq(p)[1]||7,seq=[];bkOf(p).forEach(b=>{for(let i=0;i<D[b][2].length;i++)seq.push([b,i])});
  const pat=f>=7?[0,1,2,3,4,5,6]:f===5?[1,2,3,4,5]:f===3?[1,3,5]:Array.from({length:f},(_,i)=>(1+Math.floor(i*7/f))%7);
  let k=p.start,n=0,g=0;while(n<seq.length&&g++<4000){if(pat.includes(pdt(k).getDay())){out.push({k,n:out.length+1,ch:seq.slice(n,n+am)});n+=am}k=addD(k,1)}
  return out}
@@ -552,10 +675,10 @@ function passLines(ch){const g=[];ch.forEach(([b,i])=>{const l=g[g.length-1];if(
  return g.map(x=>{const nm=ST.lang==="en"?D[x.b][1]:D[x.b][0],r=x.a===x.z?`${x.a+1}`:`${x.a+1}–${x.z+1}`;return ST.lang==="en"?`${nm} ${r}`:`${nm} ${r}장`})}
 const linked=p=>ST.link!==false&&!!p.main;
 const isDone=(p,d)=>linked(p)?d.ch.every(([b,i])=>isOn(b,i)):!!(PD[p.id]&&PD[p.id][d.k]);
-const vOf=r=>{let n=0;for(let b=RG[r][0];b<RG[r][1];b++)n+=sum(D[b][2]);return n};
+const vOf=p=>bkOf(p).reduce((n,b)=>n+sum(D[b][2]),0);
 const pctS=v=>v===0?"0":v.toFixed(1);
-function pctOf(p){const tot=vOf(p.range);if(!tot)return 0;let n=0;
- if(linked(p)){for(let b=RG[p.range][0];b<RG[p.range][1];b++)for(let i=0;i<D[b][2].length;i++)if(isOn(b,i))n+=D[b][2][i]}
+function pctOf(p){const tot=vOf(p);if(!tot)return 0;let n=0;
+ if(linked(p)){bkOf(p).forEach(b=>{for(let i=0;i<D[b][2].length;i++)if(isOn(b,i))n+=D[b][2][i]})}
  else planDays(p).forEach(d=>{if(isDone(p,d))d.ch.forEach(([b,i])=>n+=D[b][2][i])});
  return Math.min(100,n/tot*100)}
 function dnH(p){const v=pctOf(p),C=2*Math.PI*24;return `<div class="dn" role="img" aria-label="${pctS(v)}%"><svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="24" fill="none" stroke="var(--line)" stroke-width="5"/><circle cx="30" cy="30" r="24" fill="none" stroke="var(--acc)" stroke-width="5" stroke-linecap="round" stroke-dasharray="${(C*v/100).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 30 30)"${v?"":' opacity="0"'}/></svg><span>${pctS(v)}%</span></div>`}
@@ -601,7 +724,7 @@ const esvMsg=t=>{document.getElementById("esvm").textContent=t};
 function esvUI(){document.getElementById("esvv").textContent=tr(esvGet()?"esv_set":"esv_unset");document.getElementById("esvk").placeholder=tr("esv_ph")}
 document.getElementById("esvs").onclick=()=>{const k=esvClean(document.getElementById("esvk").value);if(!k){esvMsg(tr("esv_empty"));return}try{localStorage.setItem(EK,k)}catch(e){}document.getElementById("esvk").value="";esvUI();esvMsg(tr("esv_saved"))};
 document.getElementById("esvc").onclick=()=>{try{localStorage.removeItem(EK)}catch(e){}document.getElementById("esvk").value="";esvUI();esvMsg(tr("esv_cleared"))};
-document.getElementById("esvt").onclick=async()=>{const k=esvClean(document.getElementById("esvk").value)||lsG(EK);if(!k){esvMsg(tr("esv_empty"));return}esvMsg(tr("esv_wait"));try{const r=await fetch("https://api.esv.org/v3/passage/text/?q=John+11:35&include-headings=false&include-footnotes=false&include-verse-numbers=false&include-short-copyright=false",{headers:{Authorization:"Token "+k}});if(r.status===401||r.status===403){esvMsg(tr("esv_401"));return}if(r.status===429){esvMsg(tr("esv_429"));return}if(!r.ok){esvMsg(tr("esv_net")+" ("+r.status+")");return}const j=await r.json();esvMsg(tr("esv_ok")+" · "+(j.canonical||""))}catch(err){esvMsg(tr("esv_net"))}};
+document.getElementById("esvt").onclick=async()=>{const k=esvClean(document.getElementById("esvk").value)||lsG(EK);if(!k){esvMsg(tr("esv_empty"));return}esvMsg(tr("esv_wait"));try{const r=await fetch("https://api.esv.org/v3/passage/text/?q=John+11:35&include-headings=false&include-footnotes=false&include-verse-numbers=false&include-short-copyright=false",{headers:{Authorization:"Token "+k}});if(r.status===401||r.status===403){esvMsg(tr("esv_401"));return}if(r.status===429){esvMsg(tr("esv_429"));return}if(!r.ok){esvMsg(tr("esv_net")+" ("+r.status+")");return}const j=await r.json();esvMsg(tr("esv_ok")+" "+(j.canonical||""))}catch(err){esvMsg(tr("esv_net"))}};
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>setTimeout(esvUI)));esvUI();
 document.addEventListener("click",e=>{const m=document.getElementById("qmenu");if(m&&!m.hidden&&!e.target.closest("#qmenu,#qpn")){m.hidden=true;const b=document.getElementById("qpn");if(b)b.setAttribute("aria-expanded","false")}});
 document.getElementById("qcard").addEventListener("toggle",e=>{const g=e.target.dataset&&e.target.dataset.g;if(!g||!QOPEN)return;e.target.open?QOPEN.add(g):QOPEN.delete(g)},true);
@@ -626,7 +749,7 @@ function paceLines(p){
  let days=tbd?0:dayDiff(p.start,p.target)+1,end=p.target;
  if(cc&&cc.mode==="fin"){days=cc.cal;end=cc.end}
  L.push(tr("L_range",dot(p.start),tbd?tr("tbd"):dot(end),days));
- L.push(RS[p.range]);L.push(f[2]);
+ L.push(p.order==="r"&&p.list&&p.list.length?(p.grp&&p.grp.length?p.grp.map(grpL).join(" · "):tr("r_pick",p.list.length)):RS[p.range]);L.push(f[2]);
  if(am)L.push(tr("L_am",am));else if(cc&&cc.mode==="need")L.push(tr("L_ab",cc.x.toFixed(1)));
  L.push(OR[p.order]);
  if(cc&&cc.mode==="fin"&&cc.diff)L.push(tr("L_diff",dot(p.target),Math.abs(cc.diff),cc.diff>0));
@@ -647,7 +770,7 @@ function fillPl(){
  const t=document.getElementById("pt");t.textContent=PL.target==="tbd"?tr("tbd"):PL.target?dot(PL.target):tr("sel_date");t.classList.toggle("ph",!PL.target);
  document.getElementById("pq").innerHTML=qHTML(PL.target,PL.start);
  const on=(sel,attr,v)=>document.querySelectorAll(sel+" button").forEach(b=>b.setAttribute("aria-pressed",b.dataset[attr]===v));
- on("#pg","r",PL.range);on("#pf","f",PL.freq);on("#pa","a",PL.amt||"u");on("#po","o",PL.order);
+ on("#pg","r",PL.order==="r"&&PL.list&&PL.list.length?"":PL.range);on("#pf","f",PL.freq);on("#pa","a",PL.amt||"u");on("#po","o",PL.order);
  const ef=EDX==="f"&&PL.freq==="x",ea=EDX==="a"&&PL.amt==="x",okf=okInt(PL.freqX,1,7),oka=okInt(PL.amtX,1,100);
  document.getElementById("pfc").hidden=!ef;document.querySelector('#pf [data-f="x"]').hidden=ef;document.getElementById("pac").hidden=!ea;document.querySelector('#pa [data-a="x"]').hidden=ea;
  const sf=document.querySelector('#pf [data-f="x"] .sl'),sa=document.querySelector('#pa [data-a="x"] .sl');sf.className=okf?"sl":"sl t2";sf.textContent=okf?tr("fxs",PL.freqX):tr("other");sa.className=oka?"sl":"sl t2";sa.textContent=oka?tr("axs",PL.amtX):tr("other");
@@ -659,7 +782,7 @@ document.getElementById("pub").onclick=()=>{if(!HIST.length)return;PL=JSON.parse
 let FIXSEL=null;
 const fsig=()=>{const{name,...r}=PL;return JSON.stringify(r)};
 const fixRes=n=>{const c=calc(PL);if(!c||c.mode!=="fin"||!c.diff)return null;const q={...PL};
- if(n===1)q.target=c.end;else{const ch=chOf(q.range);let f=fq(q)[1]||7,rd=Math.max(1,Math.floor(c.days*f/7)),a=Math.ceil(ch/rd);
+ if(n===1)q.target=c.end;else{const ch=chOf(q);let f=fq(q)[1]||7,rd=Math.max(1,Math.floor(c.days*f/7)),a=Math.ceil(ch/rd);
   if(a>100){q.freq="d";f=7;rd=Math.max(1,Math.round(c.days));a=Math.min(100,Math.ceil(ch/rd))}
   if(a===1||a===3||a===5){q.amt=String(a);q.amtX=""}else{q.amt="x";q.amtX=String(a)}}
  return JSON.stringify([q.target,q.freq,q.amt,q.amtX])!==JSON.stringify([PL.target,PL.freq,PL.amt,PL.amtX])?q:null};
@@ -708,7 +831,7 @@ cf.addEventListener("click",e=>{if(e.target===cf)closeCf()});
 document.getElementById("ps").onclick=()=>openDp("s");
 document.getElementById("pt").onclick=()=>openDp("t");
 document.getElementById("pq").addEventListener("click",e=>{const q=e.target.closest("[data-q]");if(!q)return;PL.target=tgt(q.dataset.q,PL.start);fillPl()});
-[["pg","r","range"],["po","o","order"]].forEach(([id,a,k])=>document.getElementById(id).addEventListener("click",e=>{const b=e.target.closest("[data-"+a+"]");if(!b)return;if(id==="po"&&b.dataset.o==="r"){wip.classList.add("on");return}PL[k]=b.dataset[a];fillPl()}));
+[["pg","r","range"],["po","o","order"]].forEach(([id,a,k])=>document.getElementById(id).addEventListener("click",e=>{const b=e.target.closest("[data-"+a+"]");if(!b)return;if(id==="po"&&b.dataset.o==="r"){openBl();return}if(id==="pg"&&PL.order==="r"){PL.order="b";PL.list=[];PL.grp=[]}PL[k]=b.dataset[a];fillPl()}));
 [["pf","f","freq","freqX","pfx","f"],["pa","a","amt","amtX","pax","a"]].forEach(([id,a,k,kx,inp,code])=>document.getElementById(id).addEventListener("click",e=>{const b=e.target.closest("[data-"+a+"]");if(!b)return;
  if(b.dataset[a]==="x"){if(PL[k]!=="x")PRV[code]=PL[k];PL[k]="x";EDX=code;fillPl();const el=document.getElementById(inp);el.focus();el.select()}
  else{EDX=null;PL[k]=b.dataset[a];fillPl()}}));
@@ -742,7 +865,7 @@ function renderDp(){{const c=dp.querySelector(".card");if(c&&dpF==="t")c.style.p
  let g="<div></div>".repeat(first),pad=42-first-days;
  for(let d=1;d<=days;d++){const k=key(dy,dm,d),su=new Date(dy,dm,d).getDay()?"":" su";
   g+=`<button class="dd${su}${k===sel?" sel":""}${k===todayK?" tdy":""}" data-k="${k}"${min&&k<min?" disabled":""} aria-label="${tr("dpd",dy,dm,d)}">${d}</button>`}
- dpb.innerHTML=`<div class="mh"><button class="nav" data-n="-1" aria-label="${tr("prev_m")}">${LT}</button><span>${mLab(dm)}<span class="dyr">${dy}</span></span><button class="nav" data-n="1" aria-label="${tr("next_m")}">${RT}</button></div><div class="wd">${WD.map((w,i)=>`<div${i?"":' class="su"'}>${w}</div>`).join("")}</div><div class="cal">${g+"<div></div>".repeat(pad)}</div><div class="dfoot"><span class="qcap">${dpF==="t"?tr("from"):""}</span><button class="chip td" data-today="1" aria-label="${tr("today_aria")}">${tr("today")}</button></div>${dpF==="t"?`<div class="qbox" id="dq">${qHTML(PL.target,PL.start,false)}</div>`:`<div id="dq" aria-hidden="true"></div>`}`;
+ dpb.innerHTML=`<button class="yr dpy" data-pk="y" aria-haspopup="dialog">${tr("yr",dy)}${CHEV}</button><div class="mh"><button class="nav" data-n="-1" aria-label="${tr("prev_m")}">${LT}</button><button class="mb" data-pk="m" aria-haspopup="dialog">${mLab(dm)}${CHEV}</button><button class="nav" data-n="1" aria-label="${tr("next_m")}">${RT}</button></div><div class="wd">${WD.map((w,i)=>`<div${i?"":' class="su"'}>${w}</div>`).join("")}</div><div class="cal">${g+"<div></div>".repeat(pad)}</div><div class="dfoot"><span class="qcap">${dpF==="t"?tr("from"):""}</span><button class="chip td" data-today="1" aria-label="${tr("today_aria")}">${tr("today")}</button></div>${dpF==="t"?`<div class="qbox" id="dq">${qHTML(PL.target,PL.start,false)}</div>`:`<div id="dq" aria-hidden="true"></div>`}`;
  alignQ();fitDp();
 }
 function fitDp(){
@@ -758,6 +881,7 @@ function fitDp(){
 }
 dp.addEventListener("click",e=>{
  if(e.target===dp||e.target.closest("#dpok")){closeDp();return}
+ const pkx=e.target.closest("[data-pk]");if(pkx){openPk(pkx.dataset.pk,"d");return}
  const n=e.target.closest("[data-n]");
  if(n){dm+=+n.dataset.n;if(dm<0){dm=11;dy--}if(dm>11){dm=0;dy++}renderDp();return}
  if(e.target.closest("[data-today]")){dy=now.getFullYear();dm=now.getMonth();renderDp();return}
@@ -766,7 +890,22 @@ dp.addEventListener("click",e=>{
  const b=e.target.closest(".dd");if(!b||b.disabled)return;
  if(dpF==="s"){PL.start=b.dataset.k;if(PL.target&&PL.target!=="tbd"&&PL.target<PL.start)PL.target=""}else PL.target=b.dataset.k;
  closeDp()});
-document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(wip.classList.contains("on"))wip.classList.remove("on");else if(inf.classList.contains("on"))(document.getElementById("infno").hidden?okInfo():cancelInfo());else if(cf.classList.contains("on"))closeCf();else if(dp.classList.contains("on"))closeDp()});
+
+let BLs=[];const bl=document.getElementById("bl");
+const grpL=g=>g===1?tr("g1")+" ("+tr("ot")+")":g===6?tr("g6")+" ("+tr("nt")+")":tr(GR[g][0]);
+function renderBl(){let h="";
+ [["otf",0,5],["ntf",5,9]].forEach(([k,a0,z])=>{h+=`<h5 class="blh">${tr(k)}</h5><div class="blc">`;for(let g=a0;g<z;g++){const i=BLs.indexOf(g);h+=`<button class="blb" data-g="${g}" aria-pressed="${i>=0}">${tr(GR[g][0])}${i>=0?`<em>${i+1}</em>`:""}</button>`}h+="</div>"});
+ document.getElementById("blb").innerHTML=h}
+function openBl(){BLs=PL.grp&&PL.grp.length?[...PL.grp]:[];renderBl();bl.classList.add("on")}
+bl.addEventListener("click",e=>{if(e.target===bl){bl.classList.remove("on");return}
+ const g=e.target.closest("[data-g]");if(g){const i=+g.dataset.g;BLs=BLs.includes(i)?BLs.filter(x=>x!==i):[...BLs,i];renderBl();return}
+ if(e.target.closest("#blx")){BLs=[];renderBl();return}
+ if(e.target.closest("#blo")){if(BLs.length){PL.grp=[...BLs];PL.list=BLs.flatMap(g=>Array.from({length:GR[g][2]-GR[g][1]},(_,i)=>GR[g][1]+i));PL.order="r"}else if(PL.order==="r"){PL.grp=[];PL.list=[];PL.order="b"}bl.classList.remove("on");fillPl()}});
+function swipe(el,fn){let x0=null,y0=0;el.addEventListener("touchstart",e=>{if(e.touches.length===1){x0=e.touches[0].clientX;y0=e.touches[0].clientY}else x0=null},{passive:true});
+ el.addEventListener("touchend",e=>{if(x0===null)return;const t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;x0=null;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)fn(dx<0?1:-1)},{passive:true})}
+swipe(document.getElementById("vc"),d=>{cm+=d;if(cm<0){cm=11;cy--}if(cm>11){cm=0;cy++}renderCal()});
+swipe(dp.querySelector(".card"),d=>{dm+=d;if(dm<0){dm=11;dy--}if(dm>11){dm=0;dy++}renderDp()});
+document.addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(bl.classList.contains("on")){bl.classList.remove("on");return}if(wip.classList.contains("on"))wip.classList.remove("on");else if(inf.classList.contains("on"))(document.getElementById("infno").hidden?okInfo():cancelInfo());else if(cf.classList.contains("on"))closeCf();else if(dp.classList.contains("on"))closeDp()});
 applyLang();view();
 </script>
 <script>if("serviceWorker" in navigator&&isSecureContext){addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}</script>
